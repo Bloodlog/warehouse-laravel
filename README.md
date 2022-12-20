@@ -19,6 +19,6 @@ I wanted to work on the bugs and rewrite the old application using Laravel
 - Displaying the latest stock balances
 - Recalculation of balances when updating invoices
 
-Stack: php8, postgresql, phpunit
+Stack: php8, Laravel, postgresql, phpunit
 
 Plans to add frontend, auth, docker-compose

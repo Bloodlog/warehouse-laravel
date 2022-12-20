@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+    postgres:
+        image: postgres
+        hostname: db.warehouse.service
+        expose:
+            - 5432
+        environment:
+            - POSTGRES_USER=${DB_USERNAME}
+            - POSTGRES_PASSWORD=${DB_PASSWORD}
+            - POSTGRES_DB=${DB_DATABASE}
+        volumes:
+            - pg_vol:/var/lib/postgresql
+        stop_grace_period: 1s
+        networks:
+            - workspace
+
+### Volumes ##################################
+volumes:
+    pg_vol:
+        driver: "local"
+
+### Networks ##################################
+networks:
+    workspace:
+        external: true
